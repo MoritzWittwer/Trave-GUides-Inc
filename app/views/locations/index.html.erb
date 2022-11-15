@@ -1,19 +1,22 @@
-<div class= "container">
-<h1>Locations</h1>
+<div class= "container max-w-[600px] mx-auto text-center">
+  <h1 class= " text-[60px] font-bold">Locations</h1>
 
-<p><%= link_to 'Add New Location', new_location_path %></p>
+  <p class = " text-center border-solid border-red-800 bg-red-800 rounded p-[15px] w-fit mx-auto text-white font-bold text-base"><%= link_to 'Add New Location', new_location_path %></p>
 
-<div class="locations">
-  <% @locations.each do |location| %>
-    <div class="location">
-      <div class = "actions">
-      <h1><%= link_to location.title, location_path(location), class: "button button-red"%></h1>
-      <h2><%= location.subtitle%></h2>
-      <p><% if location.header_image.attached? %><%= image_tag location.header_image, width: "200px" %> <% end %></p>
+  <div class="locations">
+    <% @locations.each do |location| %>
+      <div class="location">
+        <div class = "actions">
+        <h1 class = "underline text-red-800 text-[40px] font-serif font-bold text-center m-0"><%= link_to location.title, location_path(location), class: "button button-red"%></h1>
+        <h2 class = "text-[16px] font-normal text-center mt-[5px] mb-0 mx-0"><%= location.subtitle%></h2>
+        <p class = "w-[200px] mx-auto pt-[12px] pb-[32px]"><% if location.header_image.attached? %><%= image_tag location.header_image %> <% end %></p>
+        </div>
+        <hr class= "border-b-[1px] border-gray-100 my-[40px] mx-0">
       </div>
-      <hr>
-    </div>
-  <% end %>
-
+    <% end %>
+  </div>
+  <div class = "underline text-red-800">
+    <%= link_to 'Back to Landing Page', root_path%><br>
+    <%= link_to 'Back to Activities Index', activities_path %>
 </div>
 </div>

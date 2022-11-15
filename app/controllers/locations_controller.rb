@@ -1,5 +1,7 @@
 class LocationsController < ApplicationController
   before_action :set_location, only: %i[show edit update destroy]
+  http_basic_authenticate_with name: 'admin', password: 'admin', except: :show
+
   def index
     @locations = Location.all
   end
@@ -34,10 +36,14 @@ class LocationsController < ApplicationController
     redirect_to locations_url, notice: 'Location was successfully destroyed', status: :see_other
   end
 
+  def home
+    redirect_to Location.includes(:activities).all.sample
+  end
+
   private
 
   def set_location
-    @location = Location.find(params[:id])
+    @location = Location.includes(:activities).find(params[:id])
   end
 
   def location_params

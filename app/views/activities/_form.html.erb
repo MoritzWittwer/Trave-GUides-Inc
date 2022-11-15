@@ -1,4 +1,4 @@
-<div class= "container">
+<div class= "container max-w-[600px] mx-auto">
 <%= form_with(model: @activity, local:true) do |form|%>
 <% if @activity.errors.any?%>
   <ul>
@@ -9,26 +9,36 @@
   <% end %>
 
 <div class="field">
-<%= form.label :title%><br>
-<%= form.text_field :title, id:  :activity_title %>
+  <div class = "font-bold">
+    <%= form.label :title%>
+  </div>
+  <%= form.text_field :title, id:  :activity_title %>
 </div>
 
 <div class="field">
-<%= form.label :description%><br>
+  <div class = "font-bold">
+    <%= form.label :description%>
+  </div>
 <%= form.text_area :description, id: :activity_description %>
 </div>
 
 <div class="field">
-<%= form.label :image %><br>
+  <div class = "font-bold">
+    <%= form.label :image %>
+  </div>
 <%= form.file_field :image, id: :activity_image %>
 </div>
-
+<br>
 <div class="field">
-<%= form.collection_select :location_id, Location.all, :id, :title, include_blank: "select Location"%>
+  <div class = "font-bold">
+    <%= form.collection_select :location_id, Location.all, :id, :title, include_blank: "select Location"%>
+  </div>
 </div>
-
+<br>
 <div class="action">
-<%=form.submit%>
+  <div class="action text-center text-white border-solid border-red-800 bg-red-800 rounded p-[15px] w-fit inline-block">
+    <%=form.submit%>
+  </div>
 </div>
 <% end %>
 </div>

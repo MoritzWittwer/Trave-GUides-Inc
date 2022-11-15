@@ -1,18 +1,21 @@
-<div class= "container">
+<div class= "mx-auto text-center">
  <%= render 'location' %>
-
-  <div class="actions">
-    <a href="#" class="button button-red">Take me there!</a>
-    <br><br>
-    <%= link_to 'Location Index', locations_path, class: "button button-red" %>
-    <br><br>
-    <%# <%= link_to 'Landing Page', root_path, class: "button button-red" %>
-    <br><br>
+ 
+  <div class="actions text-center border-solid border-red-800 bg-red-800 rounded p-[15px] w-fit mx-auto">
+    <a href="#" class="text-white font-bold text-base">Take me there!</a>
+  </div>
+  <br>
+  <div class = "underline text-red-800">
+    <%= link_to 'Location Index', locations_path %>
+  </div>
+  <div class = "underline text-red-800">
     <%= link_to 'Edit location', edit_location_path %>
-    <br>
+  </div>
+  <div class = "underline text-red-800">
     <%= link_to 'Edit Activites', activities_path%>
-    <br>
-    <br>
+  </div>
+  <br>
+  <div class = "underline text-red-800">
     <%= link_to 'Delete this Location', location_path(@location), data: { turbo_method: :delete }%>
   </div>
 </div>

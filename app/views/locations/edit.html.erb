@@ -1,6 +1,8 @@
-<div class= container>
-  <h1>edit <%= @location.title %></h1>
+<div class= "container max-w-[700px] mx-auto pt-[12px] px-[32px]">
+  <h1 class = "font-bold h-5 mb-5 text-orange-500">edit <%= @location.title %></h1>
   <%= render 'form', location: @location %>
   <br>
-  <%= link_to 'Back to Location Index', locations_path %>
+  <div class = "underline text-red-800">
+    <%= link_to 'Back to Location Index', locations_path %>
+  </div>
 </div>

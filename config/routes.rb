@@ -6,5 +6,5 @@ Rails.application.routes.draw do
   resources :locations
   resources :activities
 
-  root to: 'locations#show'
+  root to: 'locations#home'
 end

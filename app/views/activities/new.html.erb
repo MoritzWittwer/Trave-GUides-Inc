@@ -1,7 +1,8 @@
-<div class="container">
-  <h2>create Activities</h2>
+<div class="container max-w-[600px] mx-auto">
+  <h2 class= "text-orange-500 font-bold h-5">create new Activities</h2>
   <%= render 'form', location: @activity %>
   <br>
+  <div class = "underline text-red-800">
   <%= link_to 'Landing Page', root_path%><br>
   <%= link_to 'Back to Activities Index', activities_path %><br>
   <%= link_to 'Back to Locations Index', locations_path %>

@@ -1,6 +1,18 @@
-<%= @activity.title%><br>
-<%= @activity.description%><br>
-<% if @activity.image.attached? %>
-  <%= image_tag @activity.image %>
-<% end %>
-<hr>
+
+<div class = "container max-w-[600px] mx-auto">
+  
+  <div class= "float-left w-[250px] mr-[20px]">
+    <% if @activity.image.attached? %>
+      <%= image_tag @activity.image %>
+    <% end %>
+  </div>
+  <h3 class= "h-5 font-bold mb-[10px]">
+  <%= @activity.title%>
+  </h3>
+  <br>
+  <p class = "text-gray-500 font-extralight text-base leading-5">
+  <%= @activity.description%>
+  </p>
+  <br>
+  <hr>
+</div>

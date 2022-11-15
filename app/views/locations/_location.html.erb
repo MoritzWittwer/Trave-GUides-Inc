@@ -1,5 +1,42 @@
-<%= @location.title %><br>
-<%= @location.subtitle %><br>
-<% if @location.header_image.attached? %>
-  <%= image_tag @location.header_image, width: "200px" %>
+<h1 class = "text-[40px] font-serif font-bold text-center m-0">
+  <%= @location.title %>
+</h1>
+<br>
+<h2 class = "text-[16px] font-normal text-center mt-[5px] mb-0 mx-0">
+  <%= @location.subtitle %>
+</h2>
+<br>
+
+  <% if @location.header_image.attached? %>
+  <div class = "w-full mb-[20px]">
+    <%= image_tag @location.header_image %>
+  </div>
+  <% end %>
+
+
+<div class =" container max-w-[600px] mx-auto pt-[12px] px-[32px]">
+  <p class = "text-left text-gray-500 font-extralight text-base leading-5">
+    <%= @location.description%>
+  </p>
+  <hr class= "border-b-[1px] border-gray-100 my-[40px] mx-0">
+</div>
+<% @location.activities.each do |activity|%>
+  <div class = "container max-w-[600px] mx-auto pt-[12px] px-[32px]">
+    <div class = "float-left w-[250px] mr-[20px]">
+    <% if activity.image.attached? %>
+      <%= image_tag activity.image%>
+    <% end %>
+    </div>
+    <h3 class= " text-left h-5 font-bold mb-[10px]">
+      <%= activity.title%>
+    </h3>
+    <p class = "text-left text-gray-500 font-extralight text-base leading-5">
+    <%= activity.description%>
+    </p>
+  </div>
 <% end %>
+<div class = "container max-w-[600px] mx-auto pt-[12px] px-[32px]">
+  <hr class= "border-b-[1px] border-gray-100 my-[40px] mx-0">
+</div>
+
+

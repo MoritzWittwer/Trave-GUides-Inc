@@ -1,8 +1,10 @@
-<div class= "container">
-  <h1>edit</h1>
+<div class= "container max-w-[600px] mx-auto">
+  <h1 class = " text-[20px] font-bold text-orange-500">Edit this Activity</h1>
   <%= render 'activity' %>
-<hr>
+  <hr>
   <%= render 'form', location: @activity %>
   <br>
-  <%= link_to 'Back to Activity Index ', activities_path %>
+  <div class = "underline text-red-800">
+    <%= link_to 'Back to Activity Index ', activities_path %>
+  </div>
 </div>

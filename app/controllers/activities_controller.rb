@@ -1,5 +1,6 @@
 class ActivitiesController < ApplicationController
   before_action :set_activity, only: %i[show edit update destroy]
+  http_basic_authenticate_with name: 'admin', password: 'admin', except: :show
   def index
     @activities = Activity.all.order('location_id asc') # order is used to order the activites by the location_id
     # (ascending or descending ) maybe its better to use created_at?
