@@ -1,0 +1,18 @@
+<div class= "container">
+ <%= render 'location' %>
+
+  <div class="actions">
+    <a href="#" class="button button-red">Take me there!</a>
+    <br><br>
+    <%= link_to 'Location Index', locations_path, class: "button button-red" %>
+    <br><br>
+    <%# <%= link_to 'Landing Page', root_path, class: "button button-red" %>
+    <br><br>
+    <%= link_to 'Edit location', edit_location_path %>
+    <br>
+    <%= link_to 'Edit Activites', activities_path%>
+    <br>
+    <br>
+    <%= link_to 'Delete this Location', location_path(@location), data: { turbo_method: :delete }%>
+  </div>
+</div>

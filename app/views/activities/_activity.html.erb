@@ -1,0 +1,6 @@
+<%= @activity.title%><br>
+<%= @activity.description%><br>
+<% if @activity.image.attached? %>
+  <%= image_tag @activity.image %>
+<% end %>
+<hr>

@@ -1,0 +1,34 @@
+<div class= "container">
+<%= form_with(model: @activity, local:true) do |form|%>
+<% if @activity.errors.any?%>
+  <ul>
+    <% @activity.errors.full_messages.each do |message|%>
+    <li style="color: red;"><%= message%></li>
+    <% end %>
+  </ul>
+  <% end %>
+
+<div class="field">
+<%= form.label :title%><br>
+<%= form.text_field :title, id:  :activity_title %>
+</div>
+
+<div class="field">
+<%= form.label :description%><br>
+<%= form.text_area :description, id: :activity_description %>
+</div>
+
+<div class="field">
+<%= form.label :image %><br>
+<%= form.file_field :image, id: :activity_image %>
+</div>
+
+<div class="field">
+<%= form.collection_select :location_id, Location.all, :id, :title, include_blank: "select Location"%>
+</div>
+
+<div class="action">
+<%=form.submit%>
+</div>
+<% end %>
+</div>

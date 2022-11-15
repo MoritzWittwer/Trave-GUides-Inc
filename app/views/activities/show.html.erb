@@ -1,0 +1,14 @@
+<div class= "container">
+<%= render 'activity' %>
+<%= link_to 'Edit activity', edit_activity_path %>
+<br>
+<%= link_to 'Delete this activity', activity_path(@activity), data: { turbo_method: :delete }%>
+
+<br>
+<br>
+<%= link_to 'Back to Locations Index', locations_path %>
+<br>
+<%= link_to 'Back to Activities Index', activities_path %>
+<br>
+<%= link_to 'Back to the Landing Page', root_path %>
+</div>

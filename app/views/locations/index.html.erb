@@ -1,0 +1,19 @@
+<div class= "container">
+<h1>Locations</h1>
+
+<p><%= link_to 'Add New Location', new_location_path %></p>
+
+<div class="locations">
+  <% @locations.each do |location| %>
+    <div class="location">
+      <div class = "actions">
+      <h1><%= link_to location.title, location_path(location), class: "button button-red"%></h1>
+      <h2><%= location.subtitle%></h2>
+      <p><% if location.header_image.attached? %><%= image_tag location.header_image, width: "200px" %> <% end %></p>
+      </div>
+      <hr>
+    </div>
+  <% end %>
+
+</div>
+</div>

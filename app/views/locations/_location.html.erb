@@ -1,0 +1,5 @@
+<%= @location.title %><br>
+<%= @location.subtitle %><br>
+<% if @location.header_image.attached? %>
+  <%= image_tag @location.header_image, width: "200px" %>
+<% end %>

@@ -1,0 +1,21 @@
+
+<div class = "container">
+  <h1>Activities</h1>
+
+    <p><%= link_to "add a new Activity", new_activity_path %></p><br>
+
+    <div class ="activities">
+      <% @activities.each do |activity|%>
+          <p><%= activity.location_id%></p>
+          <h3><%=link_to activity.title, activity_path(activity)%></h3>
+          <div class = "image-left">
+          <P><% if activity.image.attached? %><%= image_tag activity.image, width: "200px"%><% end %></p>
+          </div>
+          <p><%= activity.description%></p>
+          <hr>
+        
+      <% end %>
+    </div>
+    <%= link_to 'Back to the Landing Page', root_path %><br>
+    <%= link_to 'Back to Locations Index', locations_path %>
+</div>
