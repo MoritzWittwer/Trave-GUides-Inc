@@ -1,6 +1,6 @@
 class LocationsController < ApplicationController
   before_action :set_location, only: %i[show edit update destroy]
-  http_basic_authenticate_with name: 'admin', password: 'admin', except: :show
+  http_basic_authenticate_with name: 'admin', password: 'admin', only: %i[new create edit update destroy]
 
   def index
     @locations = Location.all
