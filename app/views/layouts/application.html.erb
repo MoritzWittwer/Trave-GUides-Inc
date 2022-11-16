@@ -6,14 +6,13 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
-
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
     <main class="mx-0 my-[40px]">
-      <p id="notice" style="color: orange;"><%= notice %></p>
+      <p class = "text-orange-500" id="notice"><%= notice %></p>
       <%= yield %>
     </main>
   </body>

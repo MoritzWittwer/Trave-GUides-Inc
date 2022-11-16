@@ -1,23 +1,26 @@
 <div class = "container max-w-[600px] mx-auto">
-  <h1 class=  "font-bold text-[60px]">Activities</h1>
-  <p class= "h-5 underline font-bold text-red-800"><%= link_to "add a new Activity", new_activity_path %></p>
+  <h1 class=  "font-bold text-[60px]">
+    Activities
+  </h1>
+  <p class= "h-5 underline font-bold text-red-800">
+    <%= link_to "add a new Activity", new_activity_path %>
+  </p>
   <br>
-  <div class =" max-w-[600px] mx-auto">
     <% @activities.each do |activity|%>
-        <%# <p><%= activity.location_id%>
-        <div class = " float-left w-[200px] mr-[20px] mb-[30px]">
-          <% if activity.image.attached? %>
-            <%= image_tag activity.image%>
-          <% end %>
-        </div>
-        <h3 class= "h-5 font-bold mb-[10px] text-left underline text-red-800"><%=link_to activity.title, activity_path(activity)%></h3>
-        
-        <p class= "text-gray-500 font-extralight text-sm leading-5 text-left">
-          <%= activity.description%>
-        </p>
-        <hr class= "border-b-[1px] border-gray-100 my-[40px] mx-0">
+      <%# <p><%= activity.location_id%>
+      <div class = " float-left w-[200px] mr-[20px] mb-[30px]">
+        <% if activity.image.attached? %>
+          <%= image_tag activity.image%>
+        <% end %>
+      </div>
+      <h3 class= "h-5 font-bold mb-[10px] text-left underline text-red-800">
+        <%=link_to activity.title, activity_path(activity)%>
+      </h3>
+      <p class= "text-gray-500 font-extralight text-sm leading-5 text-left">
+        <%= activity.description%>
+      </p>
+      <hr class= "border-b-[1px] border-gray-100 my-[40px] mx-0">
     <% end %>
-  </div>
   <div class = "underline text-red-800">
   <%= link_to 'Back to the Landing Page', root_path %><br>
   <%= link_to 'Back to Locations Index', locations_path %>
