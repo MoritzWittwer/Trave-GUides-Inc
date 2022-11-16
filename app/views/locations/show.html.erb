@@ -1,9 +1,8 @@
 <div class= "mx-auto text-center">
- <%= render 'location' %>
- 
-  <div class="actions text-center border-solid border-red-800 bg-red-800 rounded p-[15px] w-fit mx-auto">
-    <a href="#" class="text-white font-bold text-base">Take me there!</a>
-  </div>
+  <%= render 'location' %>
+  <a href="#" class="text-white font-bold text-base">
+    <button type= button class="inline-block border-solid border-red-800 bg-red-800 rounded p-[15px] w-fit mx-auto">Take me there!</button>
+  </a>
   <br>
   <div class = "underline text-red-800">
     <%= link_to 'Location Index', locations_path %>

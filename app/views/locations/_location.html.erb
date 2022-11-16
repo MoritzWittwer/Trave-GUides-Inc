@@ -6,12 +6,11 @@
   <%= @location.subtitle %>
 </h2>
 <br>
-
-  <% if @location.header_image.attached? %>
+<% if @location.header_image.attached? %>
   <div class = "w-full mb-[20px]">
-    <%= image_tag @location.header_image %>
+    <%= image_tag @location.header_image, width: "100%" %> <!-- TODO: wie kann ich die width mit TW machen? irgendwie wird das Bild nicht angesprochen-->
   </div>
-  <% end %>
+<% end %>
 
 
 <div class =" container max-w-[600px] mx-auto pt-[12px] px-[32px]">
